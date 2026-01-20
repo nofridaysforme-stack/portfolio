@@ -78,6 +78,24 @@ Edit `.env` with your actual credentials:
 - Payload secret key (minimum 32 characters)
 - Firebase configuration
 - Firebase Admin SDK credentials
+- Admin user credentials for seeding
+
+4. **Start MongoDB** (if running locally):
+```bash
+# Make sure MongoDB is running on localhost:27017
+# Or use MongoDB Atlas and update MONGODB_URI
+```
+
+5. **Create the first admin user**:
+```bash
+npm run seed
+```
+
+This will create an admin user with the credentials from your `.env` file. Default credentials:
+- Email: `admin@example.com`
+- Password: `admin123`
+
+⚠️ **Important**: Change the password after your first login!
 
 ### Development
 
@@ -89,6 +107,8 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 Access the Payload admin panel at [http://localhost:3000/admin](http://localhost:3000/admin)
+
+Login with your admin credentials to start managing content.
 
 ### Building for Production
 
@@ -103,7 +123,9 @@ npm start
 - `npm run build` - Build for production
 - `npm start` - Start production server
 - `npm run lint` - Run ESLint
+- `npm run seed` - Create the first admin user
 - `npm run payload` - Run Payload CLI commands
+- `npm run generate:types` - Generate TypeScript types from Payload collections
 
 ## Features
 
@@ -125,11 +147,39 @@ Custom colors are configured in `tailwind.config.ts` with full shade variants (5
 
 ### Payload CMS
 
-Configure collections, blocks, and globals in `src/payload/payload.config.ts`.
+Payload CMS is fully integrated with Next.js 14 App Router.
+
+**Configuration Files:**
+- `payload.config.ts` - Root configuration file (re-exports from src/payload)
+- `src/payload/payload.config.ts` - Main Payload configuration
+- `src/payload/collections/` - Content type definitions
+  - `Users.ts` - User authentication with admin/editor roles
+  - `Media.ts` - Media library with automatic image resizing
+
+**Admin Panel:**
+- Access at: [http://localhost:3000/admin](http://localhost:3000/admin)
+- Custom branding: "Jana Portfolio CMS"
+- MongoDB database adapter
+- Slate rich text editor
+
+**Collections:**
+- **Users**: Email/password authentication with role-based access control
+- **Media**: Image and file uploads with automatic resizing (thumbnail, card, tablet, desktop)
+
+**API Endpoints:**
+- REST API: `/api/*`
+- GraphQL API: `/api/graphql`
+- GraphQL Playground: `/api/graphql-playground` (development only)
 
 ### Firebase
 
 Client and admin SDK configurations are in `src/lib/firebase/`.
+
+**Available utilities:**
+- `client.ts` - Firebase client SDK for browser
+- `admin.ts` - Firebase Admin SDK for server
+- `auth.ts` - Authentication helpers
+- `storage.ts` - File upload/download utilities
 
 ## License
 

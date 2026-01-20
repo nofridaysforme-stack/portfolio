@@ -4,12 +4,17 @@ import { slateEditor } from '@payloadcms/richtext-slate'
 import { webpackBundler } from '@payloadcms/bundler-webpack'
 import path from 'path'
 
+// Import Collections
+import Users from './collections/Users'
+import Media from './collections/Media'
+
 export default buildConfig({
   // Admin panel configuration
   admin: {
+    user: Users.slug,
     bundler: webpackBundler(),
     meta: {
-      titleSuffix: '- Portfolio Admin',
+      titleSuffix: '- Jana Portfolio CMS',
       favicon: '/favicon.ico',
       ogImage: '/og-image.jpg',
     },
@@ -18,15 +23,17 @@ export default buildConfig({
   // Editor configuration
   editor: slateEditor({}),
 
-  // Collections will be added here
+  // Collections
   collections: [
-    // Import and add your collections here
-    // Example: Projects, Blog, Media, etc.
+    Users,
+    Media,
+    // Add more collections here as you build them
+    // Example: Projects, Blog, etc.
   ],
 
-  // Globals will be added here
+  // Globals
   globals: [
-    // Import and add your globals here
+    // Add global configurations here
     // Example: Navigation, Footer, SEO, etc.
   ],
 
