@@ -119,6 +119,100 @@ This directory contains all content collection definitions for the portfolio CMS
 
 ---
 
+### Pages
+**Purpose**: Flexible page builder using drag-and-drop content blocks
+**Admin Group**: Content
+**Fields**:
+
+#### Basic Info
+- **title** (text, required) - Page title
+- **slug** (text, required, unique) - URL slug (auto-generated)
+- **status** (select) - Draft or Published
+- **publishedAt** (date) - Publication date
+
+#### Layout
+- **layout** (blocks) - Flexible content blocks:
+  - **Hero** - Large header sections with background media and CTA
+  - **RichText** - Formatted text with column layouts
+  - **Gallery** - Image galleries with multiple layout options
+  - **CallToAction** - Prominent CTA sections with buttons
+
+#### SEO
+- **metaTitle** (text, 60 chars) - Override page title for SEO
+- **metaDescription** (textarea, 160 chars) - Search description
+- **metaKeywords** (text) - Comma-separated keywords
+- **ogImage** (upload) - Social share image (1200x630px)
+- **noindex** (checkbox) - Hide from search engines
+
+**Features**:
+- ✅ Drag-and-drop block reordering
+- ✅ Duplicate blocks for quick iteration
+- ✅ Collapsible blocks for better organization
+- ✅ 4 flexible block types for any layout
+- ✅ Complete SEO control per page
+- ✅ Auto-generated slugs from titles
+- ✅ Automatic publish date tracking
+
+**Access Controls**:
+- Public can read published pages only
+- Authenticated users can create/update/delete
+- Drafts hidden from public
+
+**Blocks System**:
+The Pages collection uses Payload's block system for maximum flexibility. Each block type has its own configuration and fields. See [src/payload/blocks/README.md](../blocks/README.md) for detailed block documentation.
+
+**Use Cases**:
+- Homepage with hero + featured projects
+- About page with bio + gallery
+- Custom landing pages
+- Service pages
+- Case study pages
+- Any custom page layout
+
+**How It Works**:
+1. Create a new page
+2. Add content blocks in any order
+3. Configure each block's settings
+4. Drag to reorder blocks
+5. Duplicate blocks as needed
+6. Preview and publish
+
+**Example Page Structure**:
+```typescript
+{
+  title: "About",
+  slug: "about",
+  status: "published",
+  layout: [
+    {
+      blockType: "hero",
+      headline: "About Me",
+      height: "medium"
+    },
+    {
+      blockType: "richText",
+      content: "<p>My story...</p>",
+      columnLayout: "single"
+    },
+    {
+      blockType: "gallery",
+      layout: "masonry",
+      images: [...]
+    },
+    {
+      blockType: "cta",
+      title: "Let's Work Together",
+      backgroundColor: "primary"
+    }
+  ]
+}
+```
+
+**Hooks**:
+- `beforeChange`: Sets publishedAt date on first publish
+
+---
+
 ## Adding New Collections
 
 To add a new collection:

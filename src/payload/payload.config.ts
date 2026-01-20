@@ -8,6 +8,7 @@ import path from 'path'
 import Users from './collections/Users'
 import Media from './collections/Media'
 import Projects from './collections/Projects'
+import Pages from './collections/Pages'
 
 export default buildConfig({
   // Admin panel configuration
@@ -29,6 +30,7 @@ export default buildConfig({
     Users,
     Media,
     Projects,
+    Pages,
     // Add more collections here as you build them
     // Example: Blog, Categories, etc.
   ],

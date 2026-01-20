@@ -156,6 +156,12 @@ Payload CMS is fully integrated with Next.js 14 App Router.
   - `Users.ts` - User authentication with admin/editor roles
   - `Media.ts` - Media library with automatic image resizing
   - `Projects.ts` - Portfolio projects with full case study support
+  - `Pages.ts` - Flexible page builder with block system
+- `src/payload/blocks/` - Reusable content blocks
+  - `Hero.ts` - Large header sections
+  - `RichText.ts` - Formatted text content
+  - `Gallery.ts` - Image galleries
+  - `CallToAction.ts` - CTA sections
 
 **Admin Panel:**
 - Access at: [http://localhost:3000/admin](http://localhost:3000/admin)
@@ -177,6 +183,13 @@ Payload CMS is fully integrated with Next.js 14 App Router.
   - Project links (live, GitHub, case study)
   - Technology stack tracking
   - Project metrics and results
+- **Pages**: Flexible page builder with drag-and-drop content blocks
+  - 4 block types: Hero, RichText, Gallery, CallToAction
+  - Drag-to-reorder blocks
+  - SEO metadata per page
+  - Auto-generated slugs
+  - Draft/published workflow
+  - Perfect for custom landing pages, About, Services, etc.
 
 **API Endpoints:**
 - REST API: `/api/*`
