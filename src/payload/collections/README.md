@@ -19,23 +19,43 @@ This directory contains all content collection definitions for the portfolio CMS
 ---
 
 ### Media
-**Purpose**: File and image management
+**Purpose**: Image management with Firebase Storage integration
 **Admin Group**: Content
 **Fields**:
-- File upload
+- File upload (images only)
 - Alt text (required)
 - Caption (optional)
+- Firebase URL (auto-generated, read-only)
+- Firebase path (auto-generated, hidden)
 
 **Image Sizes**:
-- Thumbnail: 400x300
-- Card: 768x1024
-- Tablet: 1024px wide
-- Desktop: 1920px wide
+- Thumbnail: 400x300px - Admin thumbnails
+- Card: 768x576px - Project cards
+- Feature: 1920x1080px - Hero images
+
+**Firebase Integration**:
+- ✅ Automatic upload to Firebase Storage after local processing
+- ✅ All image variants uploaded to Firebase CDN
+- ✅ Automatic cleanup on deletion
+- ✅ Retry logic with exponential backoff (3 attempts)
+- ✅ Graceful fallback if Firebase not configured
+- ✅ Public CDN URLs for fast global delivery
 
 **Access Controls**:
 - Public read access
 - Authenticated users can upload/update
 - Only admins can delete
+
+**Hooks**:
+- `afterChange`: Uploads image and all variants to Firebase Storage
+- `afterDelete`: Removes image and all variants from Firebase Storage
+
+**How It Works**:
+1. User uploads image via admin panel
+2. Payload processes locally and creates size variants
+3. Hook uploads original + all variants to Firebase Storage
+4. Document updated with Firebase public URL
+5. Images served from Firebase CDN globally
 
 ---
 

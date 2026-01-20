@@ -165,7 +165,11 @@ Payload CMS is fully integrated with Next.js 14 App Router.
 
 **Collections:**
 - **Users**: Email/password authentication with role-based access control
-- **Media**: Image and file uploads with automatic resizing (thumbnail, card, tablet, desktop)
+- **Media**: Image uploads with Firebase Storage integration for scalable hosting
+  - Automatic upload to Firebase CDN
+  - Image size variants: thumbnail (400x300), card (768x576), feature (1920x1080)
+  - Automatic cleanup on deletion
+  - Public CDN URLs for fast delivery
 - **Projects**: Portfolio projects with categories, tech stack, metrics, and full case studies
   - Auto-generated slugs
   - Featured project flag for homepage
@@ -181,13 +185,23 @@ Payload CMS is fully integrated with Next.js 14 App Router.
 
 ### Firebase
 
-Client and admin SDK configurations are in `src/lib/firebase/`.
+Firebase Storage is integrated for scalable media hosting. See [Firebase Setup Guide](./docs/FIREBASE_SETUP.md) for detailed configuration instructions.
 
-**Available utilities:**
+**Integration:**
+- Media collection automatically uploads images to Firebase Storage
+- All image size variants stored in Firebase CDN
+- Automatic cleanup on file deletion
+- Retry logic with exponential backoff
+- Works with or without Firebase (graceful fallback to local storage)
+
+**Files:**
 - `client.ts` - Firebase client SDK for browser
-- `admin.ts` - Firebase Admin SDK for server
+- `admin.ts` - Firebase Admin SDK for server (storage uploads)
 - `auth.ts` - Authentication helpers
-- `storage.ts` - File upload/download utilities
+- `storage.ts` - File upload/download utilities (client-side)
+- `payload-storage-adapter.ts` - Payload CMS storage integration (server-side)
+
+**Setup:** Follow [docs/FIREBASE_SETUP.md](./docs/FIREBASE_SETUP.md) for complete Firebase configuration.
 
 ## License
 
