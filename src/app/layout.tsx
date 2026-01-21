@@ -5,6 +5,7 @@ import { getSiteSettings } from '@/lib/payload/api'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { GSAPProvider } from '@/components/providers/GSAPProvider'
+import { WebVitals, WebVitalsOverlay } from './_components/WebVitals'
 import '../styles/globals.css'
 
 const inter = Inter({
@@ -144,6 +145,10 @@ export default async function RootLayout({
           <main className="min-h-screen">{children}</main>
           <Footer siteSettings={siteSettings} />
         </GSAPProvider>
+
+        {/* Web Vitals Tracking */}
+        <WebVitals />
+        {process.env.NODE_ENV === 'development' && <WebVitalsOverlay />}
 
         {/* Google Tag Manager (noscript) */}
         {analytics?.enableAnalytics && analytics?.googleTagManagerId && (
