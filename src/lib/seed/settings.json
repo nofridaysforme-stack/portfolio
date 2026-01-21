@@ -1,0 +1,42 @@
+{
+  "siteName": "Portfolio",
+  "tagline": "Full-Stack Developer & Product Designer",
+  "contactInfo": {
+    "email": "hello@example.com",
+    "phone": "+1 (555) 123-4567",
+    "location": "San Francisco, CA"
+  },
+  "socialLinks": [
+    {
+      "platform": "github",
+      "url": "https://github.com/yourusername",
+      "displayText": "GitHub"
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/yourprofile",
+      "displayText": "LinkedIn"
+    },
+    {
+      "platform": "twitter",
+      "url": "https://twitter.com/yourhandle",
+      "displayText": "Twitter"
+    },
+    {
+      "platform": "dribbble",
+      "url": "https://dribbble.com/yourprofile",
+      "displayText": "Dribbble"
+    }
+  ],
+  "seoDefaults": {
+    "metaTitle": "Portfolio - Full-Stack Developer & Product Designer",
+    "metaDescription": "Full-stack developer specializing in React, Next.js, and Node.js. Building beautiful, scalable web applications and AI-powered solutions.",
+    "twitterHandle": "yourhandle"
+  },
+  "analytics": {
+    "enableAnalytics": false,
+    "googleAnalyticsId": "",
+    "googleTagManagerId": "",
+    "facebookPixelId": ""
+  }
+}

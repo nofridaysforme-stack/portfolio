@@ -1,0 +1,350 @@
+[
+  {
+    "title": "DTF Music Platform",
+    "slug": "dtf-music-platform",
+    "excerpt": "A revolutionary music streaming and collaboration platform connecting artists, producers, and fans worldwide.",
+    "description": "DTF Music Platform is a comprehensive digital ecosystem designed to transform how musicians create, share, and monetize their work. Built with cutting-edge technology, the platform enables real-time collaboration, high-fidelity streaming, and direct artist-to-fan connections.\n\nKey features include multi-track DAW integration, blockchain-based royalty distribution, AI-powered music discovery, and a marketplace for beats, samples, and production services. The platform has grown to serve over 50,000 active users across 120 countries.",
+    "category": "web-app",
+    "status": "published",
+    "featured": true,
+    "technologies": [
+      "Next.js",
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "WebRTC",
+      "Web Audio API",
+      "Stripe",
+      "AWS S3",
+      "Docker",
+      "Kubernetes"
+    ],
+    "liveUrl": "https://dtfmusic.example.com",
+    "githubUrl": "",
+    "metrics": {
+      "users": "50,000+",
+      "performance": "99.9% uptime",
+      "engagement": "2M+ monthly streams"
+    },
+    "overview": "DTF Music Platform represents the next generation of music streaming and collaboration. By combining high-quality audio delivery with powerful collaboration tools, we've created a space where creativity flourishes and artists maintain control of their work.",
+    "challenge": "The music industry has long struggled with fair compensation, limited collaboration tools, and lack of direct fan engagement. Traditional platforms take significant cuts while offering minimal creative control. We set out to build a platform that puts artists first.",
+    "solution": "We developed a comprehensive platform with three core pillars: Creation (real-time collaboration tools), Distribution (high-fidelity streaming), and Monetization (blockchain-based royalty distribution). The platform uses WebRTC for low-latency collaboration, IPFS for decentralized storage, and smart contracts for transparent royalty splits.",
+    "features": [
+      "Real-time multi-user DAW collaboration with sub-50ms latency",
+      "Lossless FLAC streaming with adaptive bitrate",
+      "AI-powered music discovery and recommendation engine",
+      "Blockchain-based royalty distribution and smart contracts",
+      "Integrated marketplace for beats, samples, and services",
+      "Virtual studio rooms with video conferencing",
+      "Mobile apps for iOS and Android",
+      "Advanced analytics dashboard for artists"
+    ],
+    "results": [
+      "50,000+ active users in first year",
+      "2M+ monthly audio streams",
+      "$500K+ in artist earnings distributed",
+      "99.9% platform uptime",
+      "4.8/5 average user rating",
+      "Featured in TechCrunch and Billboard"
+    ],
+    "testimonials": [
+      {
+        "author": "Sarah Mitchell",
+        "role": "Independent Artist",
+        "content": "DTF Music has completely changed how I create and distribute my music. The collaboration tools are incredible, and I finally feel like I have control over my royalties."
+      },
+      {
+        "author": "Marcus Johnson",
+        "role": "Music Producer",
+        "content": "The real-time collaboration features are game-changing. I've worked with artists across the globe with zero latency issues. Best platform I've used."
+      }
+    ]
+  },
+  {
+    "title": "Stem Splitter Pro",
+    "slug": "stem-splitter-pro",
+    "excerpt": "AI-powered audio separation tool for musicians, producers, and audio engineers to extract individual stems from mixed audio.",
+    "description": "Stem Splitter Pro is a professional-grade audio separation application that uses advanced machine learning to isolate vocals, drums, bass, and other instruments from mixed audio tracks. Perfect for remixing, sampling, practice, and audio restoration.\n\nThe application features a clean, intuitive interface with real-time preview, batch processing capabilities, and export options for all major DAWs. Powered by state-of-the-art neural networks trained on millions of audio samples.",
+    "category": "desktop-app",
+    "status": "published",
+    "featured": true,
+    "technologies": [
+      "Python",
+      "PyTorch",
+      "Electron",
+      "React",
+      "TypeScript",
+      "FFmpeg",
+      "NumPy",
+      "Librosa",
+      "TensorFlow"
+    ],
+    "liveUrl": "",
+    "githubUrl": "https://github.com/example/stem-splitter-pro",
+    "metrics": {
+      "downloads": "100,000+",
+      "accuracy": "95% separation quality",
+      "processing": "2x faster than competitors"
+    },
+    "overview": "Stem Splitter Pro brings professional audio separation to desktop users with an easy-to-use interface and industry-leading accuracy. Whether you're creating a remix, learning an instrument, or restoring vintage recordings, our AI does the heavy lifting.",
+    "challenge": "Audio stem separation has traditionally required expensive studio equipment or time-consuming manual editing. Existing solutions were either too expensive, too complex, or produced poor-quality results. Musicians needed a tool that was both powerful and accessible.",
+    "solution": "We built Stem Splitter Pro using cutting-edge deep learning models trained specifically for audio source separation. The application runs entirely offline, processes audio locally for privacy, and delivers results in minutes rather than hours. Our custom neural network architecture achieves 95% separation accuracy across a wide range of music genres.",
+    "features": [
+      "AI-powered stem separation with 95% accuracy",
+      "Isolate vocals, drums, bass, piano, and other instruments",
+      "Batch processing for multiple files",
+      "Real-time preview before export",
+      "Support for WAV, MP3, FLAC, and AAC formats",
+      "Export to Ableton, Logic, Pro Tools, and FL Studio",
+      "Offline processing - no internet required",
+      "Cross-platform: Windows, macOS, and Linux"
+    ],
+    "results": [
+      "100,000+ downloads across all platforms",
+      "4.7/5 rating on Product Hunt",
+      "95% average separation quality score",
+      "2x faster processing than competitors",
+      "Featured in Sound on Sound magazine",
+      "Adopted by major music production schools"
+    ],
+    "testimonials": [
+      {
+        "author": "David Chen",
+        "role": "Music Producer",
+        "content": "The accuracy is unbelievable. I've tried every stem splitter out there, and this one consistently produces the cleanest results. Essential tool in my workflow now."
+      }
+    ]
+  },
+  {
+    "title": "PayTrack - Time & Expense Tracker",
+    "slug": "paytrack",
+    "excerpt": "Modern time tracking and expense management for freelancers and small teams with automatic invoicing and client portals.",
+    "description": "PayTrack is a comprehensive time tracking and expense management solution designed for freelancers, consultants, and small agencies. Track billable hours, manage expenses, generate professional invoices, and get paid faster with integrated payment processing.\n\nThe platform features automatic time tracking, smart project categorization, expense receipt scanning, customizable invoice templates, and a client portal for transparent billing. With mobile apps and offline sync, you can track time anywhere.",
+    "category": "web-app",
+    "status": "published",
+    "featured": true,
+    "technologies": [
+      "React",
+      "Next.js",
+      "Node.js",
+      "MongoDB",
+      "Stripe",
+      "AWS Lambda",
+      "Tailwind CSS",
+      "Chart.js",
+      "PDF.js"
+    ],
+    "liveUrl": "https://paytrack.example.com",
+    "githubUrl": "",
+    "metrics": {
+      "users": "25,000+",
+      "invoices": "$10M+ processed",
+      "satisfaction": "4.9/5 rating"
+    },
+    "overview": "PayTrack eliminates the headache of time tracking and invoicing for independent professionals. With smart automation, beautiful invoices, and fast payment processing, you spend less time on admin and more time doing what you love.",
+    "challenge": "Freelancers waste 10+ hours per month on administrative tasks like time tracking, expense logging, and invoice creation. Existing solutions were either too complex with features nobody needs or too simple to handle real business requirements. Payment collection remained a major pain point.",
+    "solution": "We created PayTrack with a laser focus on the freelancer workflow. The app features intelligent time tracking that learns your patterns, one-click expense logging with receipt OCR, beautiful invoice generation, and integrated Stripe payments. Everything syncs across web and mobile, with offline support for working on the go.",
+    "features": [
+      "Automatic time tracking with AI-powered categorization",
+      "Expense management with receipt scanning (OCR)",
+      "Professional invoice templates with custom branding",
+      "Integrated payment processing (Stripe, PayPal)",
+      "Client portal for viewing invoices and payments",
+      "Real-time reporting and analytics",
+      "Multi-currency support (150+ currencies)",
+      "Mobile apps for iOS and Android with offline sync",
+      "Calendar integration (Google, Outlook)",
+      "Recurring invoices and payment reminders"
+    ],
+    "results": [
+      "25,000+ active users",
+      "$10M+ in invoices processed",
+      "4.9/5 average user rating",
+      "30% reduction in payment collection time",
+      "50,000+ hours tracked monthly",
+      "Featured in Forbes and Entrepreneur Magazine"
+    ],
+    "testimonials": [
+      {
+        "author": "Emily Rodriguez",
+        "role": "Freelance Designer",
+        "content": "PayTrack has saved me at least 10 hours a month. The automatic tracking is spot-on, and clients love the professional invoices. Getting paid has never been easier."
+      }
+    ]
+  },
+  {
+    "title": "SayVows - Wedding CRM",
+    "slug": "sayvows",
+    "excerpt": "All-in-one CRM and project management platform for wedding planners and event coordinators.",
+    "description": "SayVows is a specialized CRM designed specifically for wedding planners, event coordinators, and venues. Manage couples, vendors, timelines, budgets, and seating charts all in one beautiful interface.\n\nThe platform streamlines every aspect of wedding planning from the initial consultation to the big day. Features include vendor directory integration, timeline templates, budget tracking with real-time updates, seating chart designer, and a client portal where couples can track progress.",
+    "category": "web-app",
+    "status": "published",
+    "featured": false,
+    "technologies": [
+      "Vue.js",
+      "Nuxt.js",
+      "Laravel",
+      "MySQL",
+      "Redis",
+      "Pusher",
+      "Tailwind CSS",
+      "D3.js",
+      "SendGrid"
+    ],
+    "liveUrl": "https://sayvows.example.com",
+    "githubUrl": "",
+    "metrics": {
+      "planners": "5,000+",
+      "weddings": "50,000+ managed",
+      "revenue": "200% YoY growth"
+    },
+    "overview": "SayVows brings order to the beautiful chaos of wedding planning. Built specifically for professional planners, it handles everything from client relationships to vendor management, timeline coordination, and budget tracking in one elegant platform.",
+    "challenge": "Wedding planners juggle dozens of clients, hundreds of vendors, and thousands of details simultaneously. Most were using a patchwork of spreadsheets, email, and generic CRMs not designed for their industry. This led to missed details, communication breakdowns, and stressed-out planners.",
+    "solution": "We built SayVows in close collaboration with professional wedding planners to address their specific workflow. The platform centralizes all wedding information, automates routine communications, provides real-time collaboration with couples and vendors, and includes industry-specific features like seating chart designers and timeline templates.",
+    "features": [
+      "Complete CRM for managing couples and vendors",
+      "Interactive seating chart designer with drag-and-drop",
+      "Timeline builder with templates and milestones",
+      "Budget tracking with real-time updates and alerts",
+      "Vendor directory with ratings and availability",
+      "Client portal for couples to track planning progress",
+      "Automated email reminders and notifications",
+      "Document storage and sharing",
+      "Mobile apps for on-site coordination",
+      "Custom proposal and contract generation"
+    ],
+    "results": [
+      "5,000+ professional planners using the platform",
+      "50,000+ weddings successfully managed",
+      "200% year-over-year revenue growth",
+      "4.8/5 customer satisfaction score",
+      "40% reduction in planner administrative time",
+      "Partnership with major wedding industry associations"
+    ],
+    "testimonials": [
+      {
+        "author": "Jennifer Walsh",
+        "role": "Wedding Planner, Dream Events",
+        "content": "SayVows has transformed my business. I can now manage twice as many weddings without feeling overwhelmed. The client portal alone has saved me countless hours of back-and-forth emails."
+      }
+    ]
+  },
+  {
+    "title": "AI Content Studio",
+    "slug": "ai-content-studio",
+    "excerpt": "AI-powered content generation platform for marketers creating blog posts, social media, and ad copy at scale.",
+    "description": "AI Content Studio is an intelligent content creation platform that helps marketing teams generate high-quality blog posts, social media content, ad copy, and email campaigns using advanced AI models. The platform combines GPT-4 with custom fine-tuned models to match your brand voice and style.\n\nFeatures include content brief generation, SEO optimization, plagiarism detection, multi-language support, and team collaboration tools. Integrated with major publishing platforms for one-click distribution.",
+    "category": "web-app",
+    "status": "published",
+    "featured": false,
+    "technologies": [
+      "React",
+      "Next.js",
+      "Python",
+      "FastAPI",
+      "OpenAI GPT-4",
+      "PostgreSQL",
+      "Redis",
+      "Elasticsearch",
+      "Tailwind CSS"
+    ],
+    "liveUrl": "https://aicontentstu
+
+dio.example.com",
+    "githubUrl": "",
+    "metrics": {
+      "content": "1M+ pieces generated",
+      "users": "10,000+ marketers",
+      "time_saved": "70% faster creation"
+    },
+    "overview": "AI Content Studio empowers marketing teams to create compelling content at scale without sacrificing quality. Our AI learns your brand voice, optimizes for SEO, and generates everything from blog posts to social media campaigns in minutes.",
+    "challenge": "Content marketing teams struggle to keep up with demand for fresh, high-quality content across multiple channels. Writing is time-consuming, maintaining brand consistency is difficult, and hiring enough writers is expensive. Many AI tools produce generic, off-brand content that requires heavy editing.",
+    "solution": "We built a platform that combines the power of GPT-4 with brand-specific fine-tuning. The system learns from your existing content to match your tone and style, while built-in SEO analysis ensures content ranks well. The collaborative editor allows teams to refine AI-generated drafts, and integrations enable one-click publishing to WordPress, Medium, and social platforms.",
+    "features": [
+      "AI-powered content generation with GPT-4",
+      "Brand voice training from your existing content",
+      "SEO optimization with keyword analysis",
+      "Plagiarism detection and originality scoring",
+      "Multi-language support (50+ languages)",
+      "Content calendar and planning tools",
+      "Team collaboration with comments and approvals",
+      "One-click publishing to WordPress, Medium, LinkedIn",
+      "Performance analytics and A/B testing",
+      "Chrome extension for quick content creation"
+    ],
+    "results": [
+      "1M+ pieces of content generated",
+      "10,000+ active users across 500+ companies",
+      "70% reduction in content creation time",
+      "4.6/5 user satisfaction rating",
+      "85% of generated content published with minimal edits",
+      "Featured in MarketingProfs and Content Marketing Institute"
+    ],
+    "testimonials": [
+      {
+        "author": "Michael Torres",
+        "role": "Content Marketing Director, TechCorp",
+        "content": "AI Content Studio has 10x'd our content output without adding headcount. The AI actually understands our brand voice, and the SEO features have helped us rank for competitive keywords."
+      }
+    ]
+  },
+  {
+    "title": "FitnessPro - Personal Training Platform",
+    "slug": "fitnesspro",
+    "excerpt": "Comprehensive platform for personal trainers to manage clients, create workout plans, track progress, and grow their business.",
+    "description": "FitnessPro is an all-in-one platform designed for personal trainers, fitness coaches, and gym owners. Manage unlimited clients, create custom workout programs, track nutrition, schedule sessions, and process payments all in one place.\n\nThe platform features a mobile app for clients to view workouts, log exercises, track body metrics, and communicate with their trainer. Built-in video exercise library, progress analytics, and automated check-ins help trainers deliver better results and scale their business.",
+    "category": "web-app",
+    "status": "published",
+    "featured": false,
+    "technologies": [
+      "React Native",
+      "Next.js",
+      "Node.js",
+      "MongoDB",
+      "Stripe",
+      "Socket.io",
+      "AWS S3",
+      "Chart.js",
+      "Tailwind CSS"
+    ],
+    "liveUrl": "https://fitnesspro.example.com",
+    "githubUrl": "",
+    "metrics": {
+      "trainers": "15,000+",
+      "clients": "200,000+",
+      "workouts": "5M+ completed"
+    },
+    "overview": "FitnessPro gives personal trainers everything they need to run and grow a successful fitness business. From workout programming to client communication, payments to progress tracking - all in one powerful platform.",
+    "challenge": "Personal trainers were cobbling together multiple tools to manage their business: spreadsheets for workout plans, separate apps for client communication, manual payment collection, and paper logs for progress tracking. This fragmented approach was inefficient, unprofessional, and limited their ability to scale beyond a handful of clients.",
+    "solution": "We built FitnessPro as a complete business-in-a-box for fitness professionals. Trainers can manage everything from a single dashboard while clients get a beautiful mobile app for following workouts, logging progress, and staying connected. The platform handles scheduling, billing, and communication automatically, letting trainers focus on what they do best - training.",
+    "features": [
+      "Unlimited client profiles with progress tracking",
+      "Custom workout program builder with 1000+ exercises",
+      "Video exercise library with form demonstrations",
+      "Nutrition tracking and meal planning",
+      "Progress photos and body measurement tracking",
+      "Automated client check-ins and assessments",
+      "Calendar scheduling with booking links",
+      "Integrated payment processing and invoicing",
+      "In-app messaging and video calls",
+      "Business analytics and client retention reports",
+      "White-label mobile apps for premium plans"
+    ],
+    "results": [
+      "15,000+ trainers using the platform",
+      "200,000+ clients trained",
+      "5M+ workouts completed",
+      "4.7/5 trainer satisfaction score",
+      "60% improvement in client retention rates",
+      "Featured in Men's Health and Fitness Business Journal"
+    ],
+    "testimonials": [
+      {
+        "author": "Jake Morrison",
+        "role": "Personal Trainer",
+        "content": "FitnessPro has completely transformed my business. I went from managing 12 clients with spreadsheets to 50+ clients with less stress. My clients love the app, and my retention has never been better."
+      }
+    ]
+  }
+]

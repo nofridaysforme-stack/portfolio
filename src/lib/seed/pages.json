@@ -1,0 +1,80 @@
+[
+  {
+    "title": "About",
+    "slug": "about",
+    "status": "published",
+    "layout": [
+      {
+        "blockType": "hero",
+        "heading": "Building Digital Experiences That Matter",
+        "subheading": "Full-stack developer and product designer passionate about creating beautiful, functional applications that solve real problems.",
+        "ctaText": "View My Work",
+        "ctaLink": "/projects",
+        "backgroundType": "gradient"
+      },
+      {
+        "blockType": "richText",
+        "content": "<h2>Hello, I'm a Software Engineer</h2><p>With over 8 years of experience in full-stack development, I specialize in building scalable web applications, mobile apps, and AI-powered solutions. My journey in tech began with a curiosity about how things work and evolved into a passion for creating products that make a difference.</p><p>I've had the privilege of working with startups, agencies, and enterprise clients across various industries including music technology, healthcare, finance, and e-commerce. Each project taught me something new and reinforced my belief that great software is built at the intersection of beautiful design and solid engineering.</p>"
+      },
+      {
+        "blockType": "richText",
+        "content": "<h2>My Approach</h2><p>I believe in <strong>user-centered design</strong>, <strong>clean code</strong>, and <strong>iterative development</strong>. Every project starts with understanding the problem deeply, then crafting a solution that's both elegant and practical.</p><p>My development philosophy centers on three core principles:</p><ul><li><strong>Quality over Quantity:</strong> I'd rather build one feature exceptionally well than ten features poorly.</li><li><strong>Performance Matters:</strong> Fast, responsive applications create better user experiences and drive better business outcomes.</li><li><strong>Continuous Learning:</strong> Technology evolves rapidly, and staying current with best practices is non-negotiable.</li></ul>"
+      },
+      {
+        "blockType": "richText",
+        "content": "<h2>Technical Expertise</h2><p>I work across the full stack with a focus on modern JavaScript/TypeScript ecosystems:</p><h3>Frontend Development</h3><ul><li>React, Next.js, Vue.js, React Native</li><li>TypeScript, JavaScript (ES6+)</li><li>Tailwind CSS, styled-components, SASS</li><li>Redux, Zustand, React Query</li><li>GSAP, Framer Motion</li></ul><h3>Backend Development</h3><ul><li>Node.js, Express, Fastify</li><li>Python, FastAPI, Django</li><li>PostgreSQL, MongoDB, Redis</li><li>REST APIs, GraphQL</li><li>WebSockets, real-time systems</li></ul><h3>Cloud & DevOps</h3><ul><li>AWS (EC2, S3, Lambda, RDS)</li><li>Docker, Kubernetes</li><li>CI/CD with GitHub Actions</li><li>Vercel, Netlify, Railway</li></ul><h3>AI & Machine Learning</h3><ul><li>OpenAI GPT integration</li><li>PyTorch, TensorFlow</li><li>Natural Language Processing</li><li>Audio processing & analysis</li></ul>"
+      },
+      {
+        "blockType": "richText",
+        "content": "<h2>Beyond Code</h2><p>When I'm not coding, you'll find me:</p><ul><li>🎵 Producing electronic music and experimenting with synthesizers</li><li>📚 Reading about design, psychology, and system thinking</li><li>🏃 Running trails and staying active</li><li>☕ Exploring specialty coffee shops</li><li>✈️ Traveling and experiencing different cultures</li></ul><p>I'm always excited to collaborate on interesting projects, especially those that combine technology with creativity. If you're working on something cool, let's chat!</p>"
+      },
+      {
+        "blockType": "cta",
+        "heading": "Let's Work Together",
+        "text": "I'm currently available for select freelance projects and full-time opportunities. Whether you need a complete application built from scratch or help scaling an existing product, I'd love to hear about your project.",
+        "buttonText": "Get In Touch",
+        "buttonLink": "/contact",
+        "backgroundColor": "primary"
+      }
+    ]
+  },
+  {
+    "title": "Contact",
+    "slug": "contact",
+    "status": "published",
+    "layout": [
+      {
+        "blockType": "hero",
+        "heading": "Let's Build Something Amazing",
+        "subheading": "Have a project in mind? I'd love to hear about it. Drop me a line and let's start a conversation.",
+        "ctaText": "",
+        "ctaLink": "",
+        "backgroundType": "solid"
+      },
+      {
+        "blockType": "richText",
+        "content": "<h2>Get In Touch</h2><p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Whether you have a fully-formed concept or just the beginnings of an idea, I'd love to chat.</p><p>The best way to reach me is via email. I typically respond within 24-48 hours.</p><p><strong>Email:</strong> <a href=\"mailto:hello@example.com\">hello@example.com</a></p><p><strong>Location:</strong> San Francisco Bay Area (open to remote work)</p>"
+      },
+      {
+        "blockType": "richText",
+        "content": "<h2>What to Include</h2><p>When reaching out, it's helpful to include:</p><ul><li><strong>Project Overview:</strong> A brief description of what you're building</li><li><strong>Timeline:</strong> When you'd like to get started and any key deadlines</li><li><strong>Budget Range:</strong> Having a ballpark helps ensure we're aligned</li><li><strong>Tech Stack:</strong> If you have preferences or requirements</li></ul><p>Don't worry if you don't have all these details figured out yet - we can work through them together!</p>"
+      },
+      {
+        "blockType": "richText",
+        "content": "<h2>Current Availability</h2><p>I'm currently accepting:</p><ul><li>✅ Full-time opportunities (remote or SF Bay Area)</li><li>✅ Contract projects (3+ months preferred)</li><li>✅ Consulting engagements</li><li>❌ Short-term freelance gigs (< 1 month)</li></ul><p><em>Last updated: January 2026</em></p>"
+      },
+      {
+        "blockType": "richText",
+        "content": "<h2>Frequently Asked Questions</h2><h3>What's your typical project timeline?</h3><p>It depends on scope, but most projects range from 2-6 months. I can provide a more accurate estimate after our initial conversation.</p><h3>Do you work with startups?</h3><p>Absolutely! I love working with early-stage startups and can be flexible with arrangements including equity compensation for the right opportunity.</p><h3>What's your hourly rate?</h3><p>My rates vary based on project scope and commitment. Let's discuss your specific needs and I'll provide a transparent quote.</p><h3>Do you provide ongoing support?</h3><p>Yes! I offer maintenance retainers for apps I've built and can provide ongoing technical support and feature development.</p>"
+      },
+      {
+        "blockType": "cta",
+        "heading": "Ready to Start?",
+        "text": "Send me an email and let's schedule a call to discuss your project. I'm excited to learn about what you're building!",
+        "buttonText": "Email Me",
+        "buttonLink": "mailto:hello@example.com",
+        "backgroundColor": "secondary"
+      }
+    ]
+  }
+]
