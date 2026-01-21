@@ -999,3 +999,183 @@ export const setupAccessibleAnimations = () => {
     })
   }
 }
+
+/**
+ * Detect if device is mobile
+ */
+export const isMobileDevice = (): boolean => {
+  if (typeof window === 'undefined') return false
+
+  // Check for touch capability and screen size
+  const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+  const isSmallScreen = window.innerWidth < 768
+  const isMobileUserAgent = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  )
+
+  return (hasTouch && isSmallScreen) || isMobileUserAgent
+}
+
+/**
+ * Detect if device is iOS
+ */
+export const isIOS = (): boolean => {
+  if (typeof window === 'undefined') return false
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream
+}
+
+/**
+ * Detect if device is Android
+ */
+export const isAndroid = (): boolean => {
+  if (typeof window === 'undefined') return false
+  return /Android/i.test(navigator.userAgent)
+}
+
+/**
+ * Get animation duration based on device capabilities
+ * Mobile devices get faster animations to improve perceived performance
+ * @param baseDuration - Base duration in seconds
+ */
+export const getOptimizedDuration = (baseDuration: number): number => {
+  if (typeof window === 'undefined') return baseDuration
+
+  if (prefersReducedMotion()) return baseDuration * 0.01 // Nearly instant
+  if (isMobileDevice()) return baseDuration * 0.7 // 30% faster on mobile
+
+  return baseDuration
+}
+
+/**
+ * Get animation distance based on device
+ * Mobile devices get smaller distances to reduce motion
+ * @param baseDistance - Base distance in pixels
+ */
+export const getOptimizedDistance = (baseDistance: number): number => {
+  if (typeof window === 'undefined') return baseDistance
+
+  if (prefersReducedMotion()) return 0
+  if (isMobileDevice()) return baseDistance * 0.6 // 40% less distance on mobile
+
+  return baseDistance
+}
+
+/**
+ * Check if parallax effects should be enabled
+ * Disabled on mobile for better performance
+ */
+export const shouldEnableParallax = (): boolean => {
+  if (typeof window === 'undefined') return false
+  return !isMobileDevice() && !prefersReducedMotion()
+}
+
+/**
+ * Check if complex animations should be enabled
+ * Disabled on mobile and for reduced motion
+ */
+export const shouldEnableComplexAnimations = (): boolean => {
+  if (typeof window === 'undefined') return false
+  return !isMobileDevice() && !prefersReducedMotion()
+}
+
+/**
+ * Simplified fade in for mobile
+ * No transform, just opacity
+ * @param element - Element to animate
+ * @param delay - Delay before animation starts
+ */
+export const mobileFadeIn = (element: gsap.TweenTarget, delay: number = 0) => {
+  const duration = getOptimizedDuration(0.5)
+
+  return gsap.fromTo(
+    element,
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration,
+      delay,
+      ease: 'power2.out',
+    }
+  )
+}
+
+/**
+ * Optimized stagger animation for mobile
+ * Reduced stagger time and simplified effects
+ * @param elements - Elements to stagger
+ * @param options - Stagger options
+ */
+export const mobileStagger = (
+  elements: gsap.TweenTarget,
+  options?: {
+    delay?: number
+    stagger?: number
+  }
+) => {
+  const { delay = 0, stagger = 0.05 } = options || {}
+  const duration = getOptimizedDuration(0.4)
+
+  return gsap.fromTo(
+    elements,
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration,
+      delay,
+      stagger,
+      ease: 'power2.out',
+    }
+  )
+}
+
+/**
+ * Disable parallax on mobile and apply static positioning
+ * @param element - Element that would have parallax
+ */
+export const handleMobileParallax = (element: HTMLElement) => {
+  if (!shouldEnableParallax()) {
+    // Reset any parallax transforms
+    gsap.set(element, { y: 0, x: 0, clearProps: 'transform' })
+    return null
+  }
+
+  // Apply parallax only on desktop
+  return parallaxScroll(element, 0.5)
+}
+
+/**
+ * Mobile-optimized scroll trigger configuration
+ */
+export const getMobileScrollTriggerConfig = () => {
+  if (!isMobileDevice()) return {}
+
+  return {
+    // Increase trigger margins for better mobile experience
+    start: 'top 90%',
+    end: 'bottom 10%',
+    // Reduce scroll sampling on mobile
+    scrub: false,
+    // Simpler toggle actions
+    toggleActions: 'play none none none',
+  }
+}
+
+/**
+ * Setup mobile-specific animation optimizations
+ */
+export const setupMobileAnimations = () => {
+  if (typeof window === 'undefined') return
+
+  if (isMobileDevice()) {
+    // Reduce ScrollTrigger calculations on mobile
+    ScrollTrigger.config({
+      autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
+      // Skip resize throttling on mobile (fewer resize events)
+    })
+
+    // Disable momentum scrolling animations on iOS
+    if (isIOS()) {
+      document.documentElement.style.webkitOverflowScrolling = 'touch'
+    }
+  }
+}

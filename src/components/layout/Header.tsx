@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import gsap from 'gsap'
@@ -129,10 +130,10 @@ export function Header({ siteSettings }: HeaderProps) {
             {/* Desktop Navigation */}
             <Navigation variant="desktop" className="hidden md:flex" />
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Enhanced tap target (44x44px) */}
             <button
               onClick={toggleMenu}
-              className="md:hidden relative w-10 h-10 flex items-center justify-center text-dark hover:text-primary transition-colors"
+              className="md:hidden relative w-11 h-11 flex items-center justify-center text-dark hover:text-primary transition-colors active:scale-95 touch-manipulation"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
             >
@@ -170,15 +171,37 @@ export function Header({ siteSettings }: HeaderProps) {
         />
       )}
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Enhanced with better touch interactions */}
       <div
         ref={menuRef}
-        className="fixed top-0 right-0 bottom-0 w-[80%] max-w-sm bg-light shadow-2xl z-50 md:hidden translate-x-full"
+        className="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-light shadow-2xl z-50 md:hidden translate-x-full overflow-y-auto overscroll-contain"
       >
-        <div className="flex flex-col h-full pt-24 px-8 pb-8">
+        <div className="flex flex-col min-h-full pt-24 px-6 pb-safe">
+          {/* Close button inside menu for easier access */}
+          <button
+            onClick={toggleMenu}
+            className="absolute top-4 right-4 w-11 h-11 flex items-center justify-center text-dark/60 hover:text-dark transition-colors active:scale-95 touch-manipulation"
+            aria-label="Close menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+
           <Navigation
             variant="mobile"
-            className="gap-6"
+            className="gap-4"
             onLinkClick={toggleMenu}
           />
 
@@ -188,7 +211,7 @@ export function Header({ siteSettings }: HeaderProps) {
               <p className="text-sm text-dark/60 mb-2">Get in touch</p>
               <a
                 href={`mailto:${siteSettings.contactInfo.email}`}
-                className="text-base text-primary hover:text-primary-600 transition-colors"
+                className="text-base text-primary hover:text-primary-600 transition-colors active:text-primary-700 touch-manipulation inline-block py-2"
               >
                 {siteSettings.contactInfo.email}
               </a>

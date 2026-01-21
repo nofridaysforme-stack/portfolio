@@ -6,6 +6,11 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { GSAPProvider } from '@/components/providers/GSAPProvider'
 import { WebVitals, WebVitalsOverlay } from './_components/WebVitals'
+import {
+  ResponsiveIndicator,
+  BreakpointTester,
+  MobileSimulatorInfo,
+} from './_components/ResponsiveIndicator'
 import '../styles/globals.css'
 
 const inter = Inter({
@@ -149,6 +154,15 @@ export default async function RootLayout({
         {/* Web Vitals Tracking */}
         <WebVitals />
         {process.env.NODE_ENV === 'development' && <WebVitalsOverlay />}
+
+        {/* Responsive Testing Utilities (Development Only) */}
+        {process.env.NODE_ENV === 'development' && (
+          <>
+            <ResponsiveIndicator />
+            <BreakpointTester />
+            <MobileSimulatorInfo />
+          </>
+        )}
 
         {/* Google Tag Manager (noscript) */}
         {analytics?.enableAnalytics && analytics?.googleTagManagerId && (

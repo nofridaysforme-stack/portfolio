@@ -1,5 +1,6 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { setupAccessibleAnimations, setupMobileAnimations } from './animations'
 
 // Register plugins
 if (typeof window !== 'undefined') {
@@ -30,20 +31,9 @@ export function initGSAP() {
     limitCallbacks: true, // Throttle callbacks for performance
   })
 
-  // Handle accessibility - reduce motion if preferred
-  const prefersReducedMotion = window.matchMedia(
-    '(prefers-reduced-motion: reduce)'
-  ).matches
-
-  if (prefersReducedMotion) {
-    // Speed up animations dramatically for reduced motion
-    gsap.globalTimeline.timeScale(100)
-
-    // Reduce ScrollTrigger update frequency
-    ScrollTrigger.config({
-      syncInterval: 1000,
-    })
-  }
+  // Setup accessibility and mobile optimizations
+  setupAccessibleAnimations()
+  setupMobileAnimations()
 
   // Refresh ScrollTrigger on window resize (debounced)
   let resizeTimeout: NodeJS.Timeout
@@ -53,18 +43,6 @@ export function initGSAP() {
       ScrollTrigger.refresh()
     }, 300)
   })
-
-  // Detect mobile device
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  )
-
-  // Reduce complex animations on mobile for performance
-  if (isMobile) {
-    gsap.defaults({
-      duration: 0.5, // Faster animations on mobile
-    })
-  }
 }
 
 /**
