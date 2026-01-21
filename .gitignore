@@ -45,3 +45,9 @@ next-env.d.ts
 firebase-debug.log
 firestore-debug.log
 ui-debug.log
+*firebase-adminsdk*.json
+serviceAccount.json
+.firebase/
+
+# Production environment (template is ok, but not actual values)
+.env.production

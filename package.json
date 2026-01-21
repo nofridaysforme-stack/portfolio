@@ -5,8 +5,11 @@
   "scripts": {
     "dev": "tsx --watch server.ts",
     "build": "next build",
+    "build:prod": "npm run type-check && NODE_ENV=production next build",
+    "vercel-build": "next build",
     "start": "NODE_ENV=production tsx server.ts",
     "lint": "next lint",
+    "type-check": "tsc --noEmit",
     "payload": "payload",
     "seed": "tsx src/lib/seed/migrate.ts",
     "seed:projects": "tsx src/lib/seed/migrate.ts --projects",
@@ -14,7 +17,10 @@
     "seed:settings": "tsx src/lib/seed/migrate.ts --settings",
     "seed:dry-run": "tsx src/lib/seed/migrate.ts --dry-run",
     "seed:clear": "tsx src/lib/seed/migrate.ts --clear",
-    "generate:types": "payload generate:types"
+    "generate:types": "payload generate:types",
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel",
+    "postdeploy": "echo 'Deployment successful! Run health checks if needed.'"
   },
   "dependencies": {
     "@payloadcms/bundler-webpack": "^1.0.0",
