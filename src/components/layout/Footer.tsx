@@ -1,6 +1,10 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils/cn'
 import type { SiteSettings } from '@/lib/payload/api'
+import { fadeInUp, staggerFadeIn } from '@/lib/utils/animations'
 
 interface FooterProps {
   siteSettings: SiteSettings | null
@@ -25,17 +29,40 @@ const quickLinks = [
 ]
 
 export function Footer({ siteSettings }: FooterProps) {
+  const footerRef = useRef<HTMLElement>(null)
+  const columnsRef = useRef<HTMLDivElement>(null)
+  const bottomBarRef = useRef<HTMLDivElement>(null)
+
   const currentYear = new Date().getFullYear()
   const siteName = siteSettings?.siteName || 'Portfolio'
   const contactEmail = siteSettings?.contactInfo?.email
   const socialLinks = siteSettings?.socialLinks || []
 
+  useEffect(() => {
+    if (!footerRef.current || !columnsRef.current || !bottomBarRef.current) return
+
+    // Animate footer columns
+    const columns = columnsRef.current.querySelectorAll('.footer-column')
+    if (columns.length > 0) {
+      staggerFadeIn(columns, {
+        stagger: 0.2,
+        duration: 0.8,
+        direction: 'up',
+        distance: 60,
+        start: 'top 90%',
+      })
+    }
+
+    // Animate bottom bar
+    fadeInUp(bottomBarRef.current, 0, 0.8, 40)
+  }, [])
+
   return (
-    <footer className="bg-dark text-light py-12 md:py-16">
+    <footer ref={footerRef} className="bg-dark text-light py-12 md:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div ref={columnsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {/* Brand & Description */}
-          <div className="space-y-4">
+          <div className="footer-column space-y-4 opacity-0">
             <h3 className="text-xl font-bold font-serif text-primary">
               {siteName}
             </h3>
@@ -47,7 +74,7 @@ export function Footer({ siteSettings }: FooterProps) {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
+          <div className="footer-column space-y-4 opacity-0">
             <h4 className="text-sm font-semibold uppercase tracking-wider text-secondary">
               Quick Links
             </h4>
@@ -65,7 +92,7 @@ export function Footer({ siteSettings }: FooterProps) {
           </div>
 
           {/* Contact & Social */}
-          <div className="space-y-4">
+          <div className="footer-column space-y-4 opacity-0">
             <h4 className="text-sm font-semibold uppercase tracking-wider text-secondary">
               Connect
             </h4>
@@ -114,7 +141,7 @@ export function Footer({ siteSettings }: FooterProps) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-light/10">
+        <div ref={bottomBarRef} className="mt-12 pt-8 border-t border-light/10 opacity-0">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-light/50 text-sm">
               © {currentYear} {siteName}. All rights reserved.

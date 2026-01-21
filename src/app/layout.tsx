@@ -4,6 +4,7 @@ import Script from 'next/script'
 import { getSiteSettings } from '@/lib/payload/api'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { GSAPProvider } from '@/components/providers/GSAPProvider'
 import '../styles/globals.css'
 
 const inter = Inter({
@@ -138,9 +139,11 @@ export default async function RootLayout({
         )}
       </head>
       <body className={inter.className}>
-        <Header siteSettings={siteSettings} />
-        <main className="min-h-screen">{children}</main>
-        <Footer siteSettings={siteSettings} />
+        <GSAPProvider>
+          <Header siteSettings={siteSettings} />
+          <main className="min-h-screen">{children}</main>
+          <Footer siteSettings={siteSettings} />
+        </GSAPProvider>
 
         {/* Google Tag Manager (noscript) */}
         {analytics?.enableAnalytics && analytics?.googleTagManagerId && (
