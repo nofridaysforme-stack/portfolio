@@ -50,7 +50,6 @@ const Users: CollectionConfig = {
     {
       name: 'name',
       type: 'text',
-      required: true,
       label: 'Full Name',
     },
     {
@@ -75,6 +74,51 @@ const Users: CollectionConfig = {
           value: 'editor',
         },
       ],
+    },
+    {
+      name: 'firebaseUid',
+      type: 'text',
+      label: 'Firebase UID',
+      unique: true,
+      index: true,
+      admin: {
+        readOnly: true,
+        description: 'Firebase user ID - automatically set on login',
+      },
+      access: {
+        // Only system can update Firebase UID
+        update: () => false,
+      },
+    },
+    {
+      name: 'emailVerified',
+      type: 'checkbox',
+      label: 'Email Verified',
+      defaultValue: false,
+      admin: {
+        readOnly: true,
+        description: 'Firebase email verification status',
+      },
+      access: {
+        // Only system can update email verification
+        update: () => false,
+      },
+    },
+    {
+      name: 'lastLogin',
+      type: 'date',
+      label: 'Last Login',
+      admin: {
+        readOnly: true,
+        description: 'Last login timestamp',
+        date: {
+          displayFormat: 'MMM dd, yyyy h:mm a',
+        },
+      },
+      access: {
+        // Only system can update last login
+        update: () => false,
+      },
     },
   ],
   timestamps: true,
