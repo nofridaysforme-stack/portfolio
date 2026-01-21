@@ -10,6 +10,9 @@ import Media from './collections/Media'
 import Projects from './collections/Projects'
 import Pages from './collections/Pages'
 
+// Import Globals
+import SiteSettings from './globals/SiteSettings'
+
 export default buildConfig({
   // Admin panel configuration
   admin: {
@@ -37,8 +40,9 @@ export default buildConfig({
 
   // Globals
   globals: [
-    // Add global configurations here
-    // Example: Navigation, Footer, SEO, etc.
+    SiteSettings,
+    // Add more globals here as needed
+    // Example: Navigation, Footer, etc.
   ],
 
   // TypeScript configuration

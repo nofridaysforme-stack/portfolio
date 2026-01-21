@@ -162,6 +162,8 @@ Payload CMS is fully integrated with Next.js 14 App Router.
   - `RichText.ts` - Formatted text content
   - `Gallery.ts` - Image galleries
   - `CallToAction.ts` - CTA sections
+- `src/payload/globals/` - Global site settings
+  - `SiteSettings.ts` - Site-wide configuration
 
 **Admin Panel:**
 - Access at: [http://localhost:3000/admin](http://localhost:3000/admin)
@@ -190,6 +192,17 @@ Payload CMS is fully integrated with Next.js 14 App Router.
   - Auto-generated slugs
   - Draft/published workflow
   - Perfect for custom landing pages, About, Services, etc.
+
+**Globals:**
+- **Site Settings**: Centralized site-wide configuration
+  - Site Identity: Name, tagline, logo, favicon
+  - Color Palette: Brand colors (primary, secondary, dark, light, accent) with hex validation
+  - Contact Info: Email, phone, location
+  - Social Links: GitHub, LinkedIn, Twitter, Instagram, TikTok, Pinterest, YouTube, Dribbble, Behance
+  - SEO Defaults: Meta title, description, OG image, Twitter handle
+  - Analytics: Google Analytics, Facebook Pixel, Google Tag Manager with enable/disable toggle
+  - Organized in tabs for easy management
+  - Admin-only updates, public read access
 
 **API Endpoints:**
 - REST API: `/api/*`
