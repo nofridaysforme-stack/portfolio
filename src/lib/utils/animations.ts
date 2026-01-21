@@ -366,3 +366,151 @@ export const cleanupAnimations = () => {
     gsap.killTweensOf('*')
   }
 }
+
+/**
+ * Card stagger animation for project cards
+ * @param cards - Array of card elements or selector
+ * @param options - Animation options
+ */
+export const cardStagger = (
+  cards: gsap.TweenTarget,
+  options?: {
+    stagger?: number
+    duration?: number
+    delay?: number
+    distance?: number
+  }
+) => {
+  const { stagger = 0.15, duration = 0.8, delay = 0, distance = 60 } = options || {}
+
+  return gsap.fromTo(
+    cards,
+    {
+      y: distance,
+      opacity: 0,
+      scale: 0.95,
+    },
+    {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      duration,
+      delay,
+      stagger,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: cards,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse',
+      },
+    }
+  )
+}
+
+/**
+ * Filter transition animation for grid items
+ * @param grid - Grid container element
+ * @param oldItems - Items to fade out
+ * @param newItems - Items to fade in
+ */
+export const filterTransition = (
+  oldItems: gsap.TweenTarget,
+  newItems: gsap.TweenTarget
+) => {
+  const timeline = gsap.timeline()
+
+  // Fade out old items
+  timeline.to(oldItems, {
+    opacity: 0,
+    scale: 0.9,
+    duration: 0.3,
+    stagger: 0.05,
+    ease: 'power2.in',
+  })
+
+  // Fade in new items
+  timeline.fromTo(
+    newItems,
+    {
+      opacity: 0,
+      scale: 0.9,
+      y: 20,
+    },
+    {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      duration: 0.4,
+      stagger: 0.08,
+      ease: 'power3.out',
+    },
+    '-=0.1' // Slight overlap
+  )
+
+  return timeline
+}
+
+/**
+ * Image zoom effect on hover (for use with mouse events)
+ * @param image - Image element to animate
+ * @param scale - Scale factor on hover
+ */
+export const imageZoom = (image: HTMLElement, scale: number = 1.1) => {
+  const handleMouseEnter = () => {
+    gsap.to(image, {
+      scale,
+      duration: 0.6,
+      ease: 'power2.out',
+    })
+  }
+
+  const handleMouseLeave = () => {
+    gsap.to(image, {
+      scale: 1,
+      duration: 0.6,
+      ease: 'power2.out',
+    })
+  }
+
+  image.addEventListener('mouseenter', handleMouseEnter)
+  image.addEventListener('mouseleave', handleMouseLeave)
+
+  // Return cleanup function
+  return () => {
+    image.removeEventListener('mouseenter', handleMouseEnter)
+    image.removeEventListener('mouseleave', handleMouseLeave)
+  }
+}
+
+/**
+ * Fade and slide animation for filtering
+ * @param element - Element to animate
+ * @param show - Whether to show or hide
+ */
+export const fadeSlide = (element: gsap.TweenTarget, show: boolean = true) => {
+  if (show) {
+    return gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        y: 20,
+        scale: 0.95,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.4,
+        ease: 'power2.out',
+      }
+    )
+  } else {
+    return gsap.to(element, {
+      opacity: 0,
+      y: -20,
+      scale: 0.95,
+      duration: 0.3,
+      ease: 'power2.in',
+    })
+  }
+}
