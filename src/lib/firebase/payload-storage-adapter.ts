@@ -46,12 +46,12 @@ export const firebaseStorageAdapter = {
   getFileURL(filename: string): string {
     // For local development, return local URL
     if (process.env.NODE_ENV === 'development') {
-      return \`\${process.env.NEXT_PUBLIC_APP_URL}/media/\${filename}\`
+      return `${process.env.NEXT_PUBLIC_APP_URL}/media/${filename}`
     }
 
     // For production, return Firebase Storage URL
     const bucket = process.env.FIREBASE_STORAGE_BUCKET
-    return \`https://firebasestorage.googleapis.com/v0/b/\${bucket}/o/\${encodeURIComponent(filename)}?alt=media\`
+    return `https://firebasestorage.googleapis.com/v0/b/${bucket}/o/${encodeURIComponent(filename)}?alt=media`
   },
 }
 

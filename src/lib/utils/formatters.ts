@@ -63,7 +63,7 @@ export function formatRelativeTime(date: Date | string | number): string {
   for (const [unit, seconds] of Object.entries(intervals)) {
     const interval = Math.floor(diffInSeconds / seconds)
     if (interval >= 1) {
-      return \`\${interval} \${unit}\${interval === 1 ? '' : 's'} ago\`
+      return `${interval} ${unit}${interval === 1 ? '' : 's'} ago`
     }
   }
 
@@ -124,7 +124,7 @@ export function formatFileSize(bytes: number, decimals: number = 2): string {
   const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB']
   const i = Math.floor(Math.log(bytes) / Math.log(k))
 
-  return \`\${parseFloat((bytes / Math.pow(k, i)).toFixed(decimals))} \${sizes[i]}\`
+  return `${parseFloat((bytes / Math.pow(k, i)).toFixed(decimals))} ${sizes[i]}`
 }
 
 /**
@@ -180,7 +180,7 @@ export function formatPhoneNumber(phone: string): string {
   const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
 
   if (match) {
-    return \`(\${match[1]}) \${match[2]}-\${match[3]}\`
+    return `(${match[1]}) ${match[2]}-${match[3]}`
   }
 
   return phone
@@ -195,8 +195,8 @@ export function formatPhoneNumber(phone: string): string {
  * @returns Pluralized string with count
  */
 export function pluralize(count: number, singular: string, plural?: string): string {
-  const word = count === 1 ? singular : plural || \`\${singular}s\`
-  return \`\${count} \${word}\`
+  const word = count === 1 ? singular : plural || `${singular}s`
+  return `${count} ${word}`
 }
 
 /**
@@ -221,9 +221,9 @@ export function formatDuration(seconds: number): string {
   const secs = seconds % 60
 
   const parts = []
-  if (hours > 0) parts.push(\`\${hours}h\`)
-  if (minutes > 0) parts.push(\`\${minutes}m\`)
-  if (secs > 0 || parts.length === 0) parts.push(\`\${secs}s\`)
+  if (hours > 0) parts.push(`${hours}h`)
+  if (minutes > 0) parts.push(`${minutes}m`)
+  if (secs > 0 || parts.length === 0) parts.push(`${secs}s`)
 
   return parts.join(' ')
 }
